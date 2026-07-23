@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0c1524;
+  --navy-deep: #132238;
+  --navy: #1c3555;
+  --slate-blue: #3a5f82;
+  --mist: #8fa8c4;
+  --cream: #f3ede2;
+  --parchment: #e6dfd0;
+  --brass: #b8954a;
+  --brass-light: #d4b96a;
+
+  --background: var(--navy-deep);
+  --foreground: var(--cream);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ink: var(--ink);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy: var(--navy);
+  --color-slate-blue: var(--slate-blue);
+  --color-mist: var(--mist);
+  --color-cream: var(--cream);
+  --color-parchment: var(--parchment);
+  --color-brass: var(--brass);
+  --color-brass-light: var(--brass-light);
+  --font-sans: var(--font-cormorant);
+  --font-display: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Leaflet overrides for vintage map chrome */
+.leaflet-container {
+  background: #1a2f47;
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 2px;
+  box-shadow: 0 8px 24px rgba(12, 21, 36, 0.35);
+}
+
+.leaflet-popup-tip {
+  background: var(--cream);
+}
+
+.leaflet-bar a {
+  background: var(--navy) !important;
+  color: var(--cream) !important;
+  border-color: var(--slate-blue) !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+}
+
+.leaflet-bar a:hover {
+  background: var(--slate-blue) !important;
+}
+
+.jazz-marker {
+  background: var(--brass);
+  border: 2px solid var(--cream);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(12, 21, 36, 0.45);
 }
